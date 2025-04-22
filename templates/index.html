@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Email Detection</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f4f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        textarea {
+            width: 100%;
+            height: 180px;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            resize: vertical;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .ham {
+            background-color: #d4edda;  /* Light Green */
+            color: #155724;  /* Dark Green */
+            font-family: 'Arial', sans-serif; /* Set font family */
+        }
+
+        .spam {
+            background-color: #f8d7da;  /* Light Red */
+            color: #721c24;  /* Dark Red */
+            font-family: 'Arial', sans-serif; /* Set font family */
+        }
+
+        .refresh-btn {
+            background-color: #008CBA;
+            color: white;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .refresh-btn:hover {
+            background-color: #007b9f;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Spam Email Detection</h1>
+
+        <!-- Form to submit email content -->
+        <form action="/predict" method="POST" id="emailForm">
+            <textarea name="email_text" id="email_text" placeholder="Paste the email content here..." required>{{ email_text }}</textarea>
+            <input type="submit" value="Check if Spam">
+        </form>
+
+        <!-- Prediction Result Display (only shown when available) -->
+        {% if prediction is not none %}
+        <div class="result {{ 'ham' if 'ham' in prediction else 'spam' }}">
+            <h3>Prediction Result:</h3>
+            <p>{{ prediction }}</p>
+        </div>
+        {% endif %}
+
+        <!-- Refresh Button -->
+        
+    </div>
+
+</body>
+</html>
