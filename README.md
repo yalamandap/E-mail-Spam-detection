@@ -1,7 +1,3 @@
-Got it! Here's the full README text styled exactly like your example, with your updated project structure including the `static` folder for CSS and JS:
-
----
-
 ✉️ **Email Spam Detection**
 A web-based machine learning app that classifies emails as spam or ham (not spam). Built with Python, Flask, and a trained spam detection model, it provides an interactive UI for real-time predictions with a clean and responsive design featuring light and dark themes, social media links, and enhanced UX.
 
