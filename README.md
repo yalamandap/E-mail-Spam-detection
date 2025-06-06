@@ -1,6 +1,11 @@
 ✉️ **Email Spam Detection**
 A web-based machine learning app that classifies emails as spam or ham (not spam). Built with Python, Flask, and a trained spam detection model, it provides an interactive UI for real-time predictions with a clean and responsive design featuring light and dark themes, social media links, and enhanced UX.
 
+## Live Demo
+
+Check out the live app here: [Spam Email Detector on Render](https://e-mail-spam-detection-wsao.onrender.com)
+
+
 🗂️ **Project Structure**
 
 ```
@@ -71,8 +76,55 @@ Then open your browser and go to 👉 [http://127.0.0.1:5000/](http://127.0.0.1:
 * 🔄 Easy retraining with new data
 * ⚡ Fast, lightweight, and easy to use
 
+
 📸 **Screenshot**
 *(Add your app screenshot here)*
+
+🚀 Deployment Steps
+This project is deployed on Render — a simple and free platform for hosting web apps.
+
+How to deploy this app on Render:
+
+Push your project to GitHub
+Make sure your code (including app.py, requirements.txt, templates/, and static/ folders) is pushed to a GitHub repository.
+
+Create a new Web Service on Render
+
+Go to Render dashboard and create a new Web Service.
+
+Connect your GitHub repository containing this project.
+
+Select the branch (e.g., main) to deploy from.
+
+Configure build and start commands
+
+Build Command:
+
+bash
+Copy
+Edit
+pip install -r requirements.txt
+Start Command:
+
+bash
+Copy
+Edit
+gunicorn app:app
+Set instance type
+
+Choose the free instance for testing or paid instances for production use.
+
+Deploy
+
+Click "Create Web Service" and Render will automatically build and deploy your app.
+
+After a few minutes, your app will be live on a Render URL.
+
+Access your live app
+
+Visit the URL Render provides (e.g., https://your-app-name.onrender.com) to see your deployed spam detection app.
+
+
 
 📦 **Future Improvements**
 
